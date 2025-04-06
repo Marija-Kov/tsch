@@ -1,0 +1,16 @@
+{
+  "name": "train-schedule-types",
+  "version": "1.0.0",
+  "main": "index.d.ts",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Marija Kovacevic",
+  "license": "ISC",
+  "description": "Types for train schedule client and API.",
+  "devDependencies": {
+    "typescript": "^5.8.2"
+  }
+}
