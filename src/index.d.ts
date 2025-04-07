@@ -11,9 +11,17 @@ export type DepartureDetails = DepartureProps & {
     from: StationNameFormatted;
     to: StationNameFormatted;
 };
+// TODO: Ideally, there should be one FormProps that works for all repos.
+// FormPropsAPIResponse shouldn't have to exist.
 
 export type FormProps = {
     handleSetDepartures: (d: string | DepartureDetails[]) => void;
+};
+/**
+ * Used when data is fetched from the API.
+ */
+export type FormPropsAPIResponse = {
+    handleSetDepartures: (d: DeparturesResponseBody) => void;
 };
 
 export type InfoProps = {
