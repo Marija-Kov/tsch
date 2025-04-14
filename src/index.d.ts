@@ -15,7 +15,7 @@ export type DepartureDetails = DepartureProps & {
 // FormPropsAPIResponse shouldn't have to exist.
 
 export type FormProps = {
-    handleSetDepartures: (d: string | DepartureDetails[]) => void;
+    handleSetDepartures: (d: DepartureDetails[]) => void;
 };
 /**
  * Used when data is fetched from the API.
