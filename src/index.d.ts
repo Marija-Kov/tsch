@@ -149,7 +149,7 @@ export type StationNameDisplay =
   | "Leskovac Kolubarski"
   | "Veliki Borak"
   | "Barajevo Centar"
-  | "Barajevo ukr"
+  | "Barajevo ukr."
   | "Bela reka"
   | "Mladenovac"
   | "Ripanj"
