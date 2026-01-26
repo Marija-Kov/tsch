@@ -57,7 +57,7 @@ export type TrainDetails = {
     TrainIdOvcaBatajnica,
     TrainDetails["id"]
   >;
-  serviceFrequency: "ed" | "wd" | "wh";
+  serviceFrequency: ServiceFrequency;
 };
 
 export type DirectionId<T1, T2, Id extends T1 | T2> = Id extends T1 ? 1 : 2;
@@ -85,6 +85,11 @@ export type TimeInput = `${Hours}.${Minutes}` | "n/a";
  * Time format as seen in the UI.
  */
 export type TimeOutput = `${Hours}:${Minutes}` | "n/a";
+
+/**
+ * ed - every day; wd - weekday only; wh - weekends and holidays only.
+ */
+export type ServiceFrequency = "ed" | "wd" | "wh";
 
 export type StationName =
   | "batajnica"
