@@ -37,7 +37,7 @@ export type DeparturesResponseBody = {
 export type DepartureOutput = {
   departureTime: TimeOutput;
   arrivalTime: TimeOutput;
-  trainId: TrainIdBatajnicaOvca | TrainIdOvcaBatajnica;
+  trainId: TrainId;
 };
 
 export type StationDetails = {
@@ -53,8 +53,8 @@ export type StationDepartureDetails = { time: number; trainDetails: TrainDetails
 export type TrainDetails = {
   id: TrainIdBatajnicaOvca | TrainIdOvcaBatajnica;
   directionId: DirectionId<
-    TrainIdBatajnicaOvca,
-    TrainIdOvcaBatajnica,
+    TrainIdDirection1,
+    TrainIdDirection2,
     TrainDetails["id"]
   >;
   serviceFrequency: ServiceFrequency;
@@ -67,7 +67,7 @@ export type TrainItinerary = { station: StationName; time: number }[]; // TODO: 
 export type Train = TrainDetails & { itinerary: TrainItinerary };
 
 export type TrainsMap = {
-  [key in TrainIdBatajnicaOvca | TrainIdOvcaBatajnica]: Train;
+  [key in TrainId]: Train;
 };
 
 export type Station = {
@@ -165,6 +165,13 @@ export type StationNameDisplay =
   | "Sopot Kosmajski"
   | "Vlaško Polje";
 
+export type TrainId = TrainIdDirection1 | TrainIdDirection2;
+
+export type TrainIdDirection1 = TrainIdBatajnicaOvca | TrainIdZemunResnik | TrainIdOvcaResnikLazarevac | TrainIdOvcaZemunLazarevac | TrainIdOvcaZemunMladenovac;
+
+export type TrainIdDirection2 = TrainIdOvcaBatajnica | TrainIdResnikZemun | TrainIdLazarevacResnikOvca | TrainIdLazarevacZemunOvca | TrainIdMladenovacZemunOvca;
+
+// TODO: types for service frequency for directions
 
 export type TrainIdBatajnicaOvca =
   7901 | 7101 | 8001 | 8003 | 8005 | 8007 | 8009 |
