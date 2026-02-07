@@ -51,7 +51,7 @@ export type StationDetails = {
 export type StationDepartureDetails = { time: number; trainDetails: TrainDetails };
 
 export type TrainDetails = {
-  id: TrainIdBatajnicaOvca | TrainIdOvcaBatajnica;
+  id: TrainId;
   directionId: DirectionId<
     TrainIdDirection1,
     TrainIdDirection2,
